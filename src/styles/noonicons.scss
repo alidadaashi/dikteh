@@ -1,0 +1,50 @@
+@font-face{
+  font-family: noonicons;
+  src: url(../fonts/noonico/icomoon.woff);
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'noonicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cancel:before {
+  content: "\e908";
+}
+.icon-noon-copy:before {
+  content: "\e900";
+  color: #7c7c7c;
+}
+.icon-noon-expand-arrow:before {
+  content: "\e901";
+  color: #737373;
+}
+.icon-8-facebook:before {
+  content: "\e902";
+}
+.icon-noon-hot-chocolate-filled:before {
+  content: "\e903";
+}
+.icon-noon-instagram-new:before {
+  content: "\e904";
+}
+.icon-noon-marker:before {
+  content: "\e905";
+}
+.icon-noon-sent:before {
+  content: "\e906";
+}
+.icon-noon-twitter:before {
+  content: "\e907";
+}
+.icon-noon-twitter2:before {
+  content: "\f099";
+}
