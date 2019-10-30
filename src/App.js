@@ -3,6 +3,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Pet from "./Pet";
 import Header from './Header'
+import Canvas from './Canvas';
 
 const App = () => {
 
@@ -10,8 +11,8 @@ const App = () => {
         <React.StrictMode>
             <div className="container">
                 <Header />
-                <h1 > adopt me </h1>
-                <Pet name="ali" animal="DOG" />
+                {/* <Pet name="ali" animal="DOG" /> */}
+                <Canvas />
             </div>
         </React.StrictMode>
     );
