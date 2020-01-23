@@ -22,7 +22,7 @@ const Canvas = () => {
   }, []);
 
   return (
-    <div className="questions mt-3">
+    <div className="questions my-3">
       <div className="questions__container col-lg-11 mx-auto">
         <h3 className="questions__title text-center">
           لطفا گزینه درست را انتخاب کنید

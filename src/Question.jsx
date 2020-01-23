@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
+let i = 0;
 const Question = props => {
-  const [state, setState] = useState(props.test[0]);
-  let i = 0;
+  const [state, setState] = useState(props.test[i]);
 
   const nextQuestion = () => {
-    i++;
-    setState(props.test[i]);
+    console.log(i);
+    setState(props.test[++i]);
   };
 
   useEffect(() => {

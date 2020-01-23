@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import SVGIcon from './SVGIcon'
 import { connect } from "react-redux";
-import changeName from './actionCreators/Header/changeName';
-const HeaderInput = props => {
+import changeEdu from './actionCreators/Header/changeEdu';
+const EduInput = props => {
+
 
 
     return (
@@ -13,21 +14,21 @@ const HeaderInput = props => {
 
             <div className="col-sm-8 mr-auto">
                 <input type="text" className="form-control header__input"
-                    value={props.name}
-                    onChange={e => { props.updateName(e.target.value) }}
+                    value={props.edu}
+                    onChange={e => { props.UpdateSex(e.target.value) }}
                 />
             </div>
         </div>
     );
 };
 
-const mapStateToProps = ({ name }) => ({
-    name
+const mapStateToProps = ({ edu }) => ({
+    edu
 });
 
 const mapDispatchToProps = dispatch => ({
-    updateName: name => dispatch(changeName(name))
+    UpdateSex: edu => dispatch(changeEdu(edu))
 })
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderInput);
+export default connect(mapStateToProps, mapDispatchToProps)(EduInput);
