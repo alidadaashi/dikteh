@@ -73,6 +73,9 @@ body {
     }
 
     &__case {
+        outline: none !important;
+        width: 100%;
+        border: none;
         border-radius: 1.875rem;
         background-color: rgba(255, 255, 255, .7);
         padding: 3.32rem .5rem;

@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Question from "./Question";
 import db from "../db.json";
+import NewQuestion from "./NewQuestion";
+import Checkbox from "./Checkbox";
+import NotesForm from "./NotesForm";
+import AllNotes from "./AllNotes";
 const Canvas = () => {
   const [state, setState] = useState([{ A: "...", B: "..." }]);
 
@@ -27,7 +31,11 @@ const Canvas = () => {
         <h3 className="questions__title text-center">
           لطفا گزینه درست را انتخاب کنید
         </h3>
-        <Question test={state} />
+        {/* <Question test={state} /> */}
+        <NewQuestion />
+        <Checkbox />
+        <NotesForm />
+        <AllNotes />
       </div>
     </div>
   );
