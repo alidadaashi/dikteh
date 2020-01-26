@@ -9,15 +9,27 @@ class Checkbox extends React.Component {
 
   render() {
     const a = ["a", "b", "c", "v"];
-    const notesItems = this.props.notes.toString();
+    const quizes = this.props.quizes;
+    const answers = this.props.answers;
 
-    return <ul className="text-center my-5">{notesItems}</ul>;
+    return (
+      <ul className="text-center my-5">
+        {quizes.map((quize, index) =>
+          quize === answers[index] ? (
+            <li key={index}> true</li>
+          ) : (
+            <li key={index}>false</li>
+          )
+        )}
+      </ul>
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    notes: state.quiz
+    quizes: state.quiz,
+    answers: state.correct
   };
 };
 

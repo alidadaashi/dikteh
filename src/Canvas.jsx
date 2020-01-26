@@ -34,8 +34,8 @@ const Canvas = () => {
         {/* <Question test={state} /> */}
         <NewQuestion />
         <Checkbox />
-        <NotesForm />
-        <AllNotes />
+        {/* <NotesForm />
+        <AllNotes /> */}
       </div>
     </div>
   );

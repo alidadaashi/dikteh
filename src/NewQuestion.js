@@ -20,10 +20,15 @@ class NewQuestion extends React.Component {
       });
   }
   nextQuestion = answer => {
-    console.log(this.props);
-    this.state.i < this.state.max - 1
-      ? this.setState({ i: this.state.i + 1 })
-      : alert("Ended");
+    if (this.state.i <= this.state.max) {
+      this.props.nextQ(answer);
+      this.props.addQ(this.state.test[this.state.i].answer);
+      this.state.i === this.state.max - 1
+        ? this.setState({ max: 0 })
+        : this.setState({ i: this.state.i + 1 });
+    } else {
+      alert("Ended");
+    }
   };
 
   render() {
@@ -32,7 +37,7 @@ class NewQuestion extends React.Component {
         <div className="col-lg-6">
           <button
             value="A"
-            onClick={e => this.props.nextQ(e.target.value)}
+            onClick={e => this.nextQuestion(e.target.value)}
             className="questions__case"
           >
             {this.state.test[this.state.i].A}
@@ -41,7 +46,7 @@ class NewQuestion extends React.Component {
         <div className="col-lg-6">
           <button
             value="B"
-            onClick={e => this.props.nextQ(e.target.value)}
+            onClick={e => this.nextQuestion(e.target.value)}
             className="questions__case"
           >
             {this.state.test[this.state.i].B}
@@ -59,6 +64,9 @@ const mapStateToProps = ({ quiz }) => ({
 const mapDispatchToProps = dispatch => ({
   nextQ(test) {
     dispatch(addQuiz(test));
+  },
+  addQ(test) {
+    dispatch(addCorrect(test));
   }
 });
 

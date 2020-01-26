@@ -1,6 +1,12 @@
 
 
-export default function correct(state = ["C"], action) {
-    if (action.type === 'ADD_CORRECT') { return action.payload }
+export default function correct(state = [], action) {
+    if (action.type === 'ADD_CORRECT') {
+        return [
+            ...state,
+            action.payload
+
+        ]
+    }
     else { return state }
 }
