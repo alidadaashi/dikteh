@@ -288,7 +288,13 @@
     "followers": 8465
   }
 ],
-  "en":{
+ 
+
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1 },
+    { "id": 2, "body": "some comment", "postId": 1 }
+  ],
+  "profile": {
   "Dashboard": "Dashboard",
   "Analytics": "Analytics",
   "eCommerce": "eCommerce",
@@ -417,13 +423,5 @@
   "Media Player": "Media Player",
   "agGrid Table": "agGrid Table",
   "User Settings": "User Settings"
-},
-
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 },
-    { "id": 2, "body": "some comment", "postId": 1 }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+}
 }
