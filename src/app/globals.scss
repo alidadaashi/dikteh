@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@/components/Header/header.scss';
+// @import '@/components/Header/header.scss';
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --blue-light: 195, 239, 245;
+  --blue-dark: 80, 167, 187;
 }
 
 @media (prefers-color-scheme: dark) {
