@@ -3,7 +3,6 @@ import './timer.css';
 const Timer = ({time}:{time:string}) => {
 
     const [seconds, setSeconds] = useState(parseInt(time));
-    
     var r:any = document.querySelector(':root');
     r.style.setProperty('--time', `${time}s`);
     useEffect(() => {
