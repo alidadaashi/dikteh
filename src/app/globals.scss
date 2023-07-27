@@ -4,12 +4,18 @@
 
 // @import '@/components/Header/header.scss';
 
+@font-face {
+  font-family: 'Estedad';
+  src: url('/fonts/Estedad-FD-V.woff2');
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   --blue-light: 195, 239, 245;
   --blue-dark: 80, 167, 187;
+  --ghalam: 69, 69, 69;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -21,7 +27,8 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--ghalam));
+  font-family: 'Estedad';
   background: linear-gradient(
       to bottom,
       transparent,

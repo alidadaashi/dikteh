@@ -1,6 +1,18 @@
+@font-face {
+    font-family: 'nastaliq';
+    src: url('/fonts/IranNastaliq.woff');
+}
 .header{
     background-color: rgb(var(--blue-light));
     border: 2px solid rgb(var(--blue-dark));
     border-radius: 8px;
-    padding: 8px;
+    .nastaliq{
+        font-family: 'nastaliq';
+        color: rgb(var(--blue-dark));
+    }
+    // &-label{
+    //     &-box{
+    //         min-width: 150px;
+    //     }
+    // }
 }
