@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 
 // import './timer.css';
-const Timer = ({ time }: { time: string }) => {
-  const [seconds, setSeconds] = useState(parseInt(time));
+const Timer = ({ time, order }: { time: number; order: number }) => {
+  const [seconds, setSeconds] = useState(time);
+  useEffect(() => {
+    setSeconds(time); // Update the seconds state when the time prop changes
+  }, [order]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useEffect(() => {
     const r: any = document.querySelector(':root');
@@ -13,6 +16,11 @@ const Timer = ({ time }: { time: string }) => {
     }
   }, [seconds]);
 
-  return <div className='timer'> {seconds} </div>;
+  return (
+    <div className={`timer-constant-props ${seconds ? 'timer' : ''}`}>
+      {' '}
+      {seconds}{' '}
+    </div>
+  );
 };
 export default Timer;

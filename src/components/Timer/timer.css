@@ -101,8 +101,8 @@
       background-color: #98D8AA;
     }
   }
-  
-  div.timer {
+
+  .timer-constant-props{
     width: 55px;
     height: 55px;
     box-shadow: 0 0 0 0.875vmin, inset 3.75vmin 3.75vmin 7.5vmin rgba(0, 0, 0, 0.125), 3.75vmin 3.75vmin 7.5vmin rgba(0, 0, 0, 0.125);
@@ -119,9 +119,13 @@
     color: white;
     border-radius: 50%;
     font-weight: 700;
-    background-color: #47ebb4; 
+    background-color: rgb(var(--blue-light)); 
+  }
+  
+  div.timer {
     -webkit-animation: var(--time) 0.875s cubic-bezier(0.9, 0, 0.1, 1) forwards background_color;
-            animation: var(--time) 0.875s cubic-bezier(0.9, 0, 0.1, 1) forwards background_color;
+    animation: var(--time) 0.875s cubic-bezier(0.9, 0, 0.1, 1) forwards background_color;
+
   }
   /* @media (min-width: 600px) {
     div.timer {
