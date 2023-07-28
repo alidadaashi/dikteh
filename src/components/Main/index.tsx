@@ -1,12 +1,12 @@
+import './main.scss';
 
 import Quiz from '../Quiz';
 import Timer from '../Timer';
-import './main.scss' 
 export default function Main() {
-    return (
-        <div className="max-w-6xl mx-auto w-full main  p-7 relative"> 
-            <Quiz />
-            <Timer time='15' />
-        </div>
-    );
+  return (
+    <div className='main relative mx-auto w-full  max-w-6xl p-7'>
+      <Quiz />
+      <Timer time='15' />
+    </div>
+  );
 }
