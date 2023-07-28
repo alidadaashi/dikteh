@@ -119,7 +119,7 @@
     color: white;
     border-radius: 50%;
     font-weight: 700;
-    background-color: rgb(var(--blue-light)); 
+    background-color: rgb(var(--blue-dark)); 
   }
   
   div.timer {

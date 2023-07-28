@@ -4,7 +4,9 @@ import { useEffect, useState } from 'react';
 const Timer = ({ time, order }: { time: number; order: number }) => {
   const [seconds, setSeconds] = useState(time);
   useEffect(() => {
-    setSeconds(time); // Update the seconds state when the time prop changes
+    setSeconds(0);
+    setTimeout(() => setSeconds(time), 10);
+    // setSeconds(time); // Update the seconds state when the time prop changes
   }, [order]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useEffect(() => {

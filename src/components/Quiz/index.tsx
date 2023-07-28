@@ -8,7 +8,6 @@ const Quiz = () => {
   const [questions, setQuestions] = useState<question[]>([]);
   const [order, setOrder] = useState<number>(0);
   const setAnswers = (answer: number) => {
-    console.log(answer);
     setOrder(order + 1);
   };
   useEffect(() => {
