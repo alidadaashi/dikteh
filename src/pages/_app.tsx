@@ -1,4 +1,6 @@
 import { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import '@/styles/globals.scss';
 import '@/components/Header/header.scss';
@@ -17,6 +19,14 @@ import { Header } from '@/components/Header';
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  // check localStorage for answers
+  useEffect(() => {
+    if (localStorage.getItem('answers')) {
+      router.push('/result');
+    }
+  }, []);
+
   return (
     // <ThemeContext.Provider value='light'>
     <main className='flex min-h-screen flex-col items-center p-12'>

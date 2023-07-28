@@ -12,37 +12,38 @@
     "seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
   },
   "dependencies": {
-    "css-reset-and-normalize": "2.3.6",
     "@prisma/client": "4.16.1",
     "@types/node": "20.4.4",
     "@types/react-dom": "18.2.7",
+    "css-reset-and-normalize": "2.3.6",
     "next": "13.4.12",
     "postcss": "8.4.27",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.64.1",
-    "typescript": "5.1.6",
-    "tailwind-merge": "^1.13.0"
+    "tailwind-merge": "^1.13.0",
+    "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/react": "^18.2.16",
+    "@svgr/webpack": "^6.5.1",
     "@tailwindcss/forms": "^0.5.3",
+    "@types/react": "^18.2.16",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
+    "autoprefixer": "^10.4.14",
     "eslint": "^8.45.0",
     "eslint-config-next": "^13.4.12",
-    "@svgr/webpack": "^6.5.1",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
-    "tailwindcss": "3.3.3",
+    "lint-staged": "^12.5.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "autoprefixer": "^10.4.14",
     "prisma": "4.16.1",
+    "tailwindcss": "3.3.3",
     "ts-node": "10.9.1",
-    "tsconfig-paths": "4.1.1",
-    "lint-staged": "^12.5.0"
+    "tsconfig-paths": "4.1.1"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
