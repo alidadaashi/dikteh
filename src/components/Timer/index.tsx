@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import './timer.css';
+// import './timer.css';
 const Timer = ({ time }: { time: string }) => {
   const [seconds, setSeconds] = useState(parseInt(time));
-  const r: any = document.querySelector(':root');
-  r.style.setProperty('--time', `${time}s`);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   useEffect(() => {
+    const r: any = document.querySelector(':root');
+    r.style.setProperty('--time', `${time}s`);
     if (seconds > 0) {
       const interval = setInterval(() => setSeconds(seconds - 1), 1000);
       return () => clearInterval(interval);

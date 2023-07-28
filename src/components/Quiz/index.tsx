@@ -1,4 +1,21 @@
+import { useEffect, useState } from 'react';
+
+import { question } from '@/types/question';
+
 const Quiz = () => {
+  const [questions, setQuestions] = useState<question[]>([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/questions');
+        const data = await response.json();
+        setQuestions(data.questions);
+      } catch (error) {
+        console.error('Error fetching artists:', error);
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className='quiz mt-2'>
       <h4 className='text-3xl'>گزینه صحیح را انتخاب کنید.</h4>

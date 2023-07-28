@@ -1,5 +1,3 @@
-import './header.scss';
-
 export const Header = () => {
   return (
     <header className='header mx-auto mb-4 w-full max-w-6xl justify-center p-4 pt-10'>
