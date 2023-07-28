@@ -6,6 +6,20 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const questions = await db.question.findMany({});
+  const questions = await db.question.findMany({
+    // include: {
+    //   level: true,
+    // },
+    select: {
+      optionA: true,
+      optionB: true,
+      order: true,
+      level: {
+        select: {
+          name: true,
+        },
+      },
+    },
+  });
   res.status(200).json({ questions });
 }

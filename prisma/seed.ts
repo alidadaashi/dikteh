@@ -1,16 +1,22 @@
 import { db } from '@/lib/db';
 
+import {
+  questions_dabirestan,
+  questions_ebtedaei,
+  questions_rahnemaei,
+} from './questions';
 async function main() {
-  const level = await db.level.upsert({
-    where: { name: 'ttt' },
+  let level = await db.level.upsert({
+    where: { name: 'ابتدایی' },
     update: {},
     create: {
-      name: 'ttt',
+      name: 'ابتدایی',
       questions: {
-        create: new Array(5).fill(1).map((_, i) => ({
-          optionA: 'ye panjere ba ye ghafas',
-          optionB: 'ye panjere ba do ghafas',
-          trueOption: 1,
+        create: questions_ebtedaei.map((item, i) => ({
+          optionA: item.optionA,
+          optionB: item.optionB,
+          trueOption: item.trueOption,
+          order: item.order,
         })),
       },
     },
@@ -19,7 +25,45 @@ async function main() {
     },
   });
 
-  console.log({ level });
+  level = await db.level.upsert({
+    where: { name: 'راهنمایی' },
+    update: {},
+    create: {
+      name: 'راهنمایی',
+      questions: {
+        create: questions_rahnemaei.map((item, i) => ({
+          optionA: item.optionA,
+          optionB: item.optionB,
+          trueOption: item.trueOption,
+          order: item.order,
+        })),
+      },
+    },
+    include: {
+      questions: true,
+    },
+  });
+
+  level = await db.level.upsert({
+    where: { name: 'دبیرستان' },
+    update: {},
+    create: {
+      name: 'دبیرستان',
+      questions: {
+        create: questions_dabirestan.map((item, i) => ({
+          optionA: item.optionA,
+          optionB: item.optionB,
+          trueOption: item.trueOption,
+          order: item.order,
+        })),
+      },
+    },
+    include: {
+      questions: true,
+    },
+  });
+
+  // console.log({ level });
 }
 main()
   .then(async () => {

@@ -12,6 +12,7 @@
     "seed": "ts-node -P tsconfig-seed.json -r tsconfig-paths/register --transpileOnly prisma/seed.ts"
   },
   "dependencies": {
+    "css-reset-and-normalize": "2.3.6",
     "@prisma/client": "4.16.1",
     "@types/node": "20.4.4",
     "@types/react-dom": "18.2.7",

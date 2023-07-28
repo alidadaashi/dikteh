@@ -24,6 +24,7 @@ model Question {
   optionA    String
   optionB    String
   trueOption Int
+  order      Int
 
   levelId String
   level   Level  @relation(fields: [levelId], references: [id])

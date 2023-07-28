@@ -14,6 +14,7 @@ CREATE TABLE "Question" (
     "optionA" TEXT NOT NULL,
     "optionB" TEXT NOT NULL,
     "trueOption" INTEGER NOT NULL,
+    "order" INTEGER NOT NULL,
     "levelId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
