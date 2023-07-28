@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 import { saveAnswer } from '@/lib/saveAnswer';
@@ -9,9 +10,13 @@ import { question } from '@/types/question';
 const Quiz = () => {
   const [questions, setQuestions] = useState<question[]>([]);
   const [order, setOrder] = useState<number>(0);
+  const router = useRouter();
   const setAnswers = (answer: number) => {
     saveAnswer(answer);
     setOrder(order + 1);
+    if (order + 1 === questions.length) {
+      router.push('/result');
+    }
   };
   useEffect(() => {
     const fetchData = async () => {
@@ -26,12 +31,14 @@ const Quiz = () => {
     fetchData();
   }, []);
   return (
-    <div className='quiz mt-2'>
+    <div className=' mt-2'>
       <Timer time={9} order={order} />
-      <h4 className='text-3xl'>
-        {' '}
-        {order + 1}_ &nbsp;گزینه صحیح را انتخاب کنید.
-      </h4>
+      {order + 1 <= questions.length && (
+        <h4 className='text-3xl'>
+          {' '}
+          {order + 1}_ &nbsp;گزینه صحیح را انتخاب کنید.
+        </h4>
+      )}
       <div className='mt-20 flex justify-center gap-24'>
         <button
           onClick={() => setAnswers(1)}

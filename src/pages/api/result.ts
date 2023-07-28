@@ -6,13 +6,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const answers = JSON.parse(req.body);
   const questions = await db.question.findMany({
     // include: {
     //   level: true,
     // },
     select: {
-      optionA: true,
-      optionB: true,
+      trueOption: true,
       order: true,
       level: {
         select: {
@@ -24,5 +24,11 @@ export default async function handler(
       order: 'asc',
     },
   });
-  res.status(200).json({ questions });
+  let score = 20;
+  questions.forEach((question, i) => {
+    if (question.trueOption !== answers[i]) {
+      score--;
+    }
+  });
+  res.status(200).json({ data: { score } });
 }
