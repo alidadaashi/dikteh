@@ -32,7 +32,7 @@ const Quiz = () => {
   }, []);
   return (
     <div className=' mt-2'>
-      <Timer time={9} order={order} />
+      {questions.length && <Timer time={9} order={order} />}
       {order + 1 <= questions.length && (
         <h4 className='text-3xl'>
           {' '}

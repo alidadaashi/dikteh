@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Main from '@/components/Main';
+import Quiz from '@/components/Quiz';
 
 export default function Home() {
-  return <Main />;
+  return <Quiz />;
 }

@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 
 import '@/styles/globals.scss';
 import '@/components/Header/header.scss';
-import '@/components/Main/main.scss';
 import '@/components/Timer/timer.css';
 
 import { Header } from '@/components/Header';

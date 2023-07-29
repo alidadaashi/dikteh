@@ -37,6 +37,14 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.main{
+  border: 2px solid rgb(var(--blue-dark));
+  border-radius: 8px;
+  background-image: url('/images/main-bg.svg');
+  background-size: 6px;
+  min-height: 600px;
+}
+
 
 .intro{
   font-size: 1.5rem;
