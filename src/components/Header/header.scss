@@ -10,6 +10,10 @@
         font-family: 'nastaliq';
         color: rgb(var(--blue-dark));
     }
+    &-info{
+        top: -5px;
+        position: relative;
+    }
     // &-label{
     //     &-box{
     //         min-width: 150px;

@@ -1,4 +1,6 @@
-import { MouseEventHandler, ReactNode, useState } from 'react';
+import { MouseEventHandler, ReactNode, useContext, useState } from 'react';
+
+import HeaderContext from '@/shared/headerContext';
 
 const Modal = ({
   isOpen,
@@ -9,13 +11,32 @@ const Modal = ({
   onClose: MouseEventHandler;
   children: ReactNode;
 }) => {
+  const info = useContext(HeaderContext);
   if (!isOpen) return null;
-  const [name, setName] = useState('');
-  const [surname, setSurname] = useState('');
-  const [education, setEducation] = useState('');
-  const [field, setField] = useState('');
+  const headerContextValue = useContext(HeaderContext);
+  const [name, setName] = useState(info.name);
+  const [surname, setSurname] = useState(info.surname);
+  const [education, setEducation] = useState(info.education);
+  const [field, setField] = useState(info.field);
   const handleSubmit = (e: any) => {
     e.preventDefault();
+  };
+
+  const handleNameChange = (e: any) => {
+    setName(e);
+    headerContextValue.updateUserInfo({ ...headerContextValue, name: e });
+  };
+  const handleSurnameChange = (e: any) => {
+    setSurname(e);
+    headerContextValue.updateUserInfo({ ...headerContextValue, surname: e });
+  };
+  const handleEducationChange = (e: any) => {
+    setEducation(e);
+    headerContextValue.updateUserInfo({ ...headerContextValue, education: e });
+  };
+  const handleFieldChange = (e: any) => {
+    setField(e);
+    headerContextValue.updateUserInfo({ ...headerContextValue, field: e });
   };
 
   return (
@@ -33,7 +54,7 @@ const Modal = ({
               className='basis-2/3'
               type='text'
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => handleNameChange(e.target.value)}
             />
           </div>
           <div className='mb-4 flex'>
@@ -44,7 +65,7 @@ const Modal = ({
               className='basis-2/3'
               type='text'
               value={surname}
-              onChange={(e) => setSurname(e.target.value)}
+              onChange={(e) => handleSurnameChange(e.target.value)}
             />
           </div>
           <div className='mb-4 flex'>
@@ -55,7 +76,7 @@ const Modal = ({
               className='basis-2/3'
               type='text'
               value={education}
-              onChange={(e) => setEducation(e.target.value)}
+              onChange={(e) => handleEducationChange(e.target.value)}
             />
           </div>
           <div className='mb-4 flex'>
@@ -66,7 +87,7 @@ const Modal = ({
               className='basis-2/3'
               type='text'
               value={field}
-              onChange={(e) => setField(e.target.value)}
+              onChange={(e) => handleFieldChange(e.target.value)}
             />
           </div>
         </form>

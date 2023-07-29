@@ -8,6 +8,8 @@ import '@/components/Timer/timer.css';
 
 import { Header } from '@/components/Header';
 
+import { HeaderProvider } from '@/shared/headerContext';
+
 // !STARTERCONF This is for demo purposes, remove @/styles/colors.css import immediately
 
 // import ThemeContext from '@/shared/themeContext';
@@ -27,17 +29,17 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    // <ThemeContext.Provider value='light'>
-    <main className='flex min-h-screen flex-col items-center p-12'>
-      <Header />
-      <div className='quiz w-full'>
-        <div className='main relative mx-auto w-full  max-w-6xl p-7'>
-          <Component {...pageProps} />
+    <HeaderProvider>
+      <main className='flex min-h-screen flex-col items-center p-12'>
+        <Header />
+        <div className='quiz w-full'>
+          <div className='main relative mx-auto w-full  max-w-6xl p-7'>
+            <Component {...pageProps} />
+          </div>
         </div>
-      </div>
-      <div className='z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex'></div>
-    </main>
-    // </ThemeContext.Provider>
+        <div className='z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex'></div>
+      </main>
+    </HeaderProvider>
   );
 }
 
