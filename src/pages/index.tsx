@@ -14,18 +14,32 @@ export default function Home() {
     setModalIsOpen(false);
   };
   return (
-    <div>
-      <button
-        className='rounded bg-blue-500 px-4 py-2 font-semibold text-white hover:bg-blue-600'
-        onClick={openModal}
-      >
-        Start Quiz
-      </button>
+    <div className='intro'>
+      <h5>۲۰ سوال دوگزینه ای از شما پرسیده خواهدشد.</h5>
+      <h6>
+        برای یافتن گزینه صحیح تنها ۱۰ ثانیه زمان دارید و در صورت اتمام زمان پاسخ
+        شما ثبت نخواهد شد.{' '}
+      </h6>
+      <p>
+        در پایان بر اساس تعداد گزینه های صحیحی که انتخاب کرده اید نمره خواهید
+        گرفت.
+      </p>
+      <div className='mt-12 flex justify-center'>
+        <button
+          className='mt-5 rounded bg-blue-700 px-12 py-0 font-semibold text-white hover:bg-blue-800'
+          onClick={openModal}
+        >
+          شروع آزمون
+        </button>
+      </div>
 
       <Modal isOpen={modalIsOpen} onClose={closeModal}>
-        <h2 className='mb-4 text-xl font-bold'>Modal Content</h2>
-        <p>This is the content of the modal.</p>
-        <Link href='/quiz'> Start Quiz </Link>
+        <Link
+          href='/quiz'
+          className='ml-4 mr-auto rounded bg-blue-700 px-8 py-2 text-base font-semibold text-white hover:bg-blue-800'
+        >
+          شروع آزمون{' '}
+        </Link>
       </Modal>
     </div>
   );
