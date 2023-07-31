@@ -3,11 +3,16 @@ import { useEffect, useState } from 'react';
 
 import { saveAnswer } from '@/lib/saveAnswer';
 
+import ProgressBar from '@/components/Progressbar';
 import Timer from '@/components/Timer';
 
 import { question } from '@/types/question';
 
 const Quiz = () => {
+  const calculateMaxLevel = (name: string) => {
+    const max = questions.filter((q) => q.level.name === name).length;
+    return max;
+  };
   const [questions, setQuestions] = useState<question[]>([]);
   const [order, setOrder] = useState<number>(0);
   const router = useRouter();
@@ -24,6 +29,7 @@ const Quiz = () => {
         const response = await fetch('/api/questions');
         const data = await response.json();
         setQuestions(data.questions);
+        console.log('questions: ', data.questions);
       } catch (error) {
         console.error('Error fetching questions:', error);
       }
@@ -59,6 +65,11 @@ const Quiz = () => {
           </h2>
         </button>
       </div>
+      <ProgressBar
+        value={questions[order]?.levelOrder - 1}
+        maxValue={calculateMaxLevel(questions[order]?.level.name)}
+        level={questions[order]?.level.name}
+      />
     </div>
   );
 };

@@ -3,6 +3,7 @@ export type question = {
   optionB: string;
   trueOption: number;
   level: level;
+  levelOrder: number;
 };
 export type level = {
   name: string;

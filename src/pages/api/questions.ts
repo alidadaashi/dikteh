@@ -14,6 +14,7 @@ export default async function handler(
       optionA: true,
       optionB: true,
       order: true,
+      levelOrder: true,
       level: {
         select: {
           name: true,
