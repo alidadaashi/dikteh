@@ -3,19 +3,19 @@ import { createContext, ReactNode, useState } from 'react';
 import { header } from '@/types/header';
 
 const HeaderContext = createContext<header>({
-  name: 'John',
-  surname: 'Doe',
-  education: 'University of Life',
-  field: 'Computer Science',
+  name: '',
+  surname: '',
+  education: '',
+  field: '',
   updateUserInfo: () => {},
 });
 
 export const HeaderProvider = ({ children }: { children: ReactNode }) => {
   const [headerContextValue, setHeaderContextValue] = useState<header>({
-    name: 'John',
-    surname: 'Doe',
-    education: 'University of Life',
-    field: 'Computer Science',
+    name: '',
+    surname: '',
+    education: '',
+    field: '',
     updateUserInfo: () => {},
   });
 

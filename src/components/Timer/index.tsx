@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
 
 // import './timer.css';
-const Timer = ({ time, order }: { time: number; order: number }) => {
+const Timer = ({
+  time,
+  order,
+  timefinished,
+}: {
+  time: number;
+  order: number;
+}) => {
   const [seconds, setSeconds] = useState(time);
   useEffect(() => {
-    setSeconds(0);
+    setSeconds(-1);
     setTimeout(() => setSeconds(time), 10);
     // setSeconds(time); // Update the seconds state when the time prop changes
   }, [order]);
@@ -15,6 +22,8 @@ const Timer = ({ time, order }: { time: number; order: number }) => {
     if (seconds > 0) {
       const interval = setInterval(() => setSeconds(seconds - 1), 1000);
       return () => clearInterval(interval);
+    } else if (seconds === 0) {
+      timefinished();
     }
   }, [seconds]);
 

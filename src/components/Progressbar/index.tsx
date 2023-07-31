@@ -3,7 +3,6 @@ import React from 'react';
 const ProgressBar = ({ value, maxValue, level }) => {
   // Calculate the percentage of progress
   const percentage = (value / maxValue) * 100 + 1;
-  console.log('Level: ', level);
 
   return (
     <div className='relative mx-auto mt-8 h-8 w-2/4 overflow-hidden rounded-lg bg-gray-400'>
