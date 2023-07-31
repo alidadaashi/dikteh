@@ -1,9 +1,10 @@
 export type question = {
   optionA: string;
   optionB: string;
-  trueOption: number;
+  trueOption?: number;
   level: level;
-  levelOrder: number;
+  levelOrder?: number;
+  isCorrect?: boolean;
 };
 export type level = {
   name: string;

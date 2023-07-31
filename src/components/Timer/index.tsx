@@ -12,7 +12,7 @@ const Timer = ({
   const [seconds, setSeconds] = useState(time);
   useEffect(() => {
     setSeconds(-1);
-    setTimeout(() => setSeconds(time), 10);
+    setTimeout(() => setSeconds(time), 50);
     // setSeconds(time); // Update the seconds state when the time prop changes
   }, [order]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -28,7 +28,7 @@ const Timer = ({
   }, [seconds]);
 
   return (
-    <div className={`timer-constant-props ${seconds ? 'timer' : ''}`}>
+    <div className={`timer-constant-props ${seconds > 0 ? 'timer' : ''}`}>
       {' '}
       {seconds}{' '}
     </div>
