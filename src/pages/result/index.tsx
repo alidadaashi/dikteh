@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { fetcher } from '@/lib/api';
 
+import Modal from '@/components/Modal';
+import ScreenshotButton from '@/components/ScreenshotBtn';
+
 const Result = () => {
   const [score, setScore] = useState([]);
   const [grade, setGrade] = useState('');
@@ -25,6 +28,17 @@ const Result = () => {
     };
     fetchData();
   }, []);
+
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <div className='mb-24'>
       <h1 className='mt-2 text-3xl font-medium'> نتیجه آزمون:</h1>
@@ -93,9 +107,21 @@ const Result = () => {
 
       <div>
         <p className='mx-auto my-12 flex w-2/4 justify-center border-t-4 border-blue-700 pt-8 text-center text-4xl font-bold'>
-          نمره:
-          <span> &nbsp; {grade} </span>
+          نمره:&nbsp;
+          <span className='underline underline-offset-8'> {grade} </span>
         </p>
+      </div>
+      <div className='text-center'>
+        <button
+          className='mt-5 rounded bg-green-700 px-12 py-2 font-semibold text-white hover:bg-green-800'
+          onClick={openModal}
+        >
+          دانلود کارنامه
+        </button>
+
+        <Modal isOpen={modalIsOpen} onClose={closeModal}>
+          <ScreenshotButton onClose={closeModal} />
+        </Modal>
       </div>
     </div>
   );

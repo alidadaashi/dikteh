@@ -8,6 +8,7 @@ const Timer = ({
 }: {
   time: number;
   order: number;
+  timefinished: () => void;
 }) => {
   const [seconds, setSeconds] = useState(time);
   useEffect(() => {

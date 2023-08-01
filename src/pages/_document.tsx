@@ -13,9 +13,15 @@ export const metadata: Metadata = {
 export default function Document({ children }: { children: React.ReactNode }) {
   return (
     <Html lang='en'>
-      <Head></Head>
+      <Head>
+        {/* <meta name='twitter:image' content='<generated>' />
+        <meta name='twitter:image:type' content='<generated>' />
+        <meta name='twitter:image:width' content='<generated>' />
+        <meta name='twitter:image:height' content='<generated>' /> */}
+      </Head>
       <body // className={inter.className}
         dir='rtl'
+        id='root'
       >
         <Main />
         <NextScript />

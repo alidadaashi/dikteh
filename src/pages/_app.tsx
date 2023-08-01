@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <HeaderProvider>
-      <main className='flex min-h-screen flex-col items-center p-12'>
+      <main id='main' className='flex min-h-screen flex-col items-center p-12'>
         <Header />
         <div className='quiz w-full'>
           <div className='main relative mx-auto w-full  max-w-6xl p-7'>
