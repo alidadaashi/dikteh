@@ -3,10 +3,10 @@ export type header = {
   surname: string;
   education: string;
   field: string;
-  updateInfo?: (
-    name: string,
-    surname: string,
-    education: string,
-    field: string
+  updateUserInfo: (
+    name?: string,
+    surname?: string,
+    education?: string,
+    field?: string
   ) => void;
 };

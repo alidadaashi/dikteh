@@ -5,6 +5,8 @@ export type question = {
   level: level;
   levelOrder?: number;
   isCorrect?: boolean;
+  correct?: number;
+  incorrect?: number;
 };
 export type level = {
   name: string;

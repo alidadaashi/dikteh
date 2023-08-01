@@ -12,29 +12,29 @@ const Modal = ({
   children: ReactNode;
 }) => {
   const info = useContext(HeaderContext);
-  if (!isOpen) return null;
   const headerContextValue = useContext(HeaderContext);
   const [name, setName] = useState(info.name);
   const [surname, setSurname] = useState(info.surname);
   const [education, setEducation] = useState(info.education);
   const [field, setField] = useState(info.field);
+  if (!isOpen) return null;
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
 
-  const handleNameChange = (e: any) => {
+  const handleNameChange = (e: string) => {
     setName(e);
     headerContextValue.updateUserInfo({ ...headerContextValue, name: e });
   };
-  const handleSurnameChange = (e: any) => {
+  const handleSurnameChange = (e: string) => {
     setSurname(e);
     headerContextValue.updateUserInfo({ ...headerContextValue, surname: e });
   };
-  const handleEducationChange = (e: any) => {
+  const handleEducationChange = (e: string) => {
     setEducation(e);
     headerContextValue.updateUserInfo({ ...headerContextValue, education: e });
   };
-  const handleFieldChange = (e: any) => {
+  const handleFieldChange = (e: string) => {
     setField(e);
     headerContextValue.updateUserInfo({ ...headerContextValue, field: e });
   };
