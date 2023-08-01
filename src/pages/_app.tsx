@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 import '@/styles/globals.scss';
 import '@/components/Header/header.scss';
@@ -20,12 +21,14 @@ import { HeaderProvider } from '@/shared/headerContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  // check localStorage for answers
-  // useEffect(() => {
-  //   if (localStorage.getItem('answers')) {
-  //     router.push('/result');
-  //   }
-  // }, []);
+  //check localStorage for answers
+  useEffect(() => {
+    if (localStorage.getItem('ExamFinished')) {
+      router.push('/result');
+    } else {
+      localStorage.clear();
+    }
+  }, []);
 
   return (
     <HeaderProvider>

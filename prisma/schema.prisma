@@ -24,7 +24,8 @@ model Question {
   optionA    String
   optionB    String
   trueOption Int
-  order      Int
+  // auto increment
+  order      Int    @default(autoincrement())
   levelOrder Int
 
   levelId String

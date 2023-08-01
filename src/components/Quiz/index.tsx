@@ -27,6 +27,7 @@ const Quiz = () => {
     saveAnswer(answer);
     setOrder(order + 1);
     if (order + 1 === questions.length) {
+      localStorage.setItem('ExamFinished', 'true');
       router.push('/result');
     }
   };
